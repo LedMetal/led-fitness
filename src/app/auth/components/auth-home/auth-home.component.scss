@@ -1,0 +1,24 @@
+.top-bar {
+  align-items: center;
+  background-color: #222222;
+  color: #f5f5f5;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+
+  fa-icon {
+    color: #33b7e4;
+    font-size: 2rem;
+  }
+
+  span {
+    font-size: 1.25rem;
+  }
+}
+
+.auth-home-content {
+  align-items: center;
+  display: flex;
+  height: calc(100% - 53px);
+  justify-content: center;
+}
