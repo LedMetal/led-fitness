@@ -3,6 +3,7 @@ import { AuthHomeComponent } from './auth/components/auth-home/auth-home.compone
 import { LoginComponent } from './auth/components/login/login.component';
 import { SignUpComponent } from './auth/components/sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
+import { authGuard } from './auth/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -16,9 +17,16 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [authGuard],
   },
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
 ];
