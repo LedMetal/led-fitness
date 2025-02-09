@@ -4,10 +4,16 @@ import { Router, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
+import { LedInputComponent } from '../../../shared/components/led-input/led-input.component';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [ReactiveFormsModule, FontAwesomeModule, RouterModule],
+  imports: [
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    RouterModule,
+    LedInputComponent,
+  ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
 })

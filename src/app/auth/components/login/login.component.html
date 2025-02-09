@@ -3,15 +3,19 @@
 
   <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>
-      <input type="text" placeholder="email" formControlName="email" />
+      <led-input
+        [type]="'text'"
+        [placeholder]="'email'"
+        formControlName="email"
+      ></led-input>
     </div>
 
     <div>
-      <input
-        type="password"
-        placeholder="password"
+      <led-input
+        [type]="'password'"
+        [placeholder]="'password'"
         formControlName="password"
-      />
+      ></led-input>
     </div>
 
     <div>

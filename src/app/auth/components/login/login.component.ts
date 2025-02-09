@@ -4,10 +4,16 @@ import { Router, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
+import { LedInputComponent } from '../../../shared/components/led-input/led-input.component';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, FontAwesomeModule, RouterModule],
+  imports: [
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    RouterModule,
+    LedInputComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
