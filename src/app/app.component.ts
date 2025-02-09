@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { AuthService } from './auth/services/auth.service';
 import { User } from '@angular/fire/auth';
@@ -20,15 +20,11 @@ export class AppComponent implements OnInit {
           email: user.email!,
           username: user.displayName!,
         });
+
+        this.router.navigateByUrl('home');
       } else {
         this.authService.currentUser.set(null);
       }
     });
-
-    if (!this.authService.currentUser()) {
-      this.router.navigateByUrl('auth/login');
-    } else {
-      this.router.navigateByUrl('home');
-    }
   }
 }
