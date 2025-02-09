@@ -6,20 +6,30 @@
   </div>
 
   <div class="auth-home-content">
+    @if (router.url === '/auth') {
+    <div class="auth-content-header">Welcome to LedFitness!</div>
+
+    <div class="auth-content-text">
+      Login or Sign Up to start recording and tracking your workouts!
+    </div>
+    } @else {
     <router-outlet />
+    }
   </div>
 
   <div class="action-buttons">
+    @if (router.url !== '/auth/login') {
     <div class="action-button" routerLink="/auth/login">
       <fa-icon class="button-icon" [icon]="faRightToBracket"></fa-icon>
 
       <span class="button-label">Login</span>
     </div>
-
+    } @if (router.url !== '/auth/signup') {
     <div class="action-button" routerLink="/auth/signup">
       <fa-icon class="button-icon" [icon]="faCirclePlus"></fa-icon>
 
       <span class="button-label">Sign Up</span>
     </div>
+    }
   </div>
 </div>
