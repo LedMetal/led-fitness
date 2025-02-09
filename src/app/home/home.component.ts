@@ -18,7 +18,7 @@ export class HomeComponent {
 
   logout(): void {
     this.authService.logout().subscribe(() => {
-      this.router.navigateByUrl('/auth/login');
+      this.router.navigateByUrl('/auth');
     });
   }
 }
