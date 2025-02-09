@@ -3,7 +3,6 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   faCirclePlus,
-  faDumbbell,
   faRightToBracket,
 } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
@@ -19,6 +18,5 @@ export class AuthHomeComponent {
   authService = inject(AuthService);
 
   faCirclePlus = faCirclePlus;
-  faDumbbell = faDumbbell;
   faRightToBracket = faRightToBracket;
 }
