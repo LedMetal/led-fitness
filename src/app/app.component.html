@@ -1,7 +1,15 @@
 <div class="top-bar">
-  <fa-icon [icon]="faDumbbell"></fa-icon>
+  <div class="home-link" routerLink="">
+    <fa-icon class="home-icon" [icon]="faDumbbell"></fa-icon>
 
-  <span>LedFitness</span>
+    <span class="home-text">LedFitness</span>
+  </div>
+
+  @if (this.authService.currentUser()) {
+  <div class="logout-container" (click)="logout()">
+    <fa-icon [icon]="faRightFromBracket"></fa-icon>
+  </div>
+  }
 </div>
 
 <router-outlet />

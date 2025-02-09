@@ -1,13 +1,16 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { AuthService } from './auth/services/auth.service';
 import { User } from '@angular/fire/auth';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faDumbbell } from '@fortawesome/free-solid-svg-icons';
+import {
+  faDumbbell,
+  faRightFromBracket,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FontAwesomeModule],
+  imports: [RouterOutlet, FontAwesomeModule, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -16,6 +19,7 @@ export class AppComponent implements OnInit {
   router = inject(Router);
 
   faDumbbell = faDumbbell;
+  faRightFromBracket = faRightFromBracket;
 
   ngOnInit(): void {
     this.authService.user$.subscribe((user: User | null) => {
@@ -29,6 +33,12 @@ export class AppComponent implements OnInit {
       } else {
         this.authService.currentUser.set(null);
       }
+    });
+  }
+
+  logout(): void {
+    this.authService.logout().subscribe(() => {
+      this.router.navigateByUrl('/auth');
     });
   }
 }

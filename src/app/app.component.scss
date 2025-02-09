@@ -3,15 +3,22 @@
   background-color: #222222;
   color: #f5f5f5;
   display: flex;
-  gap: 0.5rem;
+  justify-content: space-between;
   padding: 0.5rem 1rem;
 
-  fa-icon {
-    color: #33b7e4;
-    font-size: 2rem;
-  }
+  .home-link {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
 
-  span {
-    font-size: 1.25rem;
+    .home-icon {
+      color: #33b7e4;
+      font-size: 2rem;
+    }
+
+    .home-text {
+      font-size: 1.25rem;
+    }
   }
 }
