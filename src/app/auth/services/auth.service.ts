@@ -17,7 +17,9 @@ export class AuthService {
   firebaseAuth = inject(Auth);
 
   user$ = user(this.firebaseAuth);
-  currentUser = signal<{ email: string; username: string } | null>(null);
+  currentUser = signal<{ uid: string; email: string; username: string } | null>(
+    null
+  );
 
   /**
    * Create a new user with the specified email and password, then set user's displayName
