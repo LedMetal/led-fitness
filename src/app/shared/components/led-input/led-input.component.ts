@@ -29,15 +29,15 @@ export class LedInputComponent implements ControlValueAccessor {
   onChange = (value: string) => {};
   onTouched = () => {};
 
-  writeValue(value: any): void {
+  writeValue(value: string): void {
     this.value = value;
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: (value: string) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
