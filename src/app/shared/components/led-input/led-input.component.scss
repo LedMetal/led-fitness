@@ -1,38 +1,46 @@
 .led-input-container {
+  align-items: center;
   background-color: #ffffff;
   border: 1px solid #767676;
   border-radius: 3px;
+  display: flex;
   height: 36px;
 
   &.is-typing {
     .placeholder-text {
       font-size: 12px;
-      transform: translate(8px, 2px) !important;
+      transform: translate(8px, 1px) !important;
     }
 
     .led-input-element {
-      height: 22px;
-      transform: translateY(13px);
+      height: 22px !important;
+      transform: translateY(14px);
     }
   }
 
-  .placeholder-text {
-    position: absolute;
-    transform: translate(8px, 9px);
-    transition: all 0.125s ease-in-out;
-  }
+  .input-content {
+    height: 100%;
+    width: 100%;
 
-  .led-input-element {
-    background-color: transparent;
-    border: 0;
-    font-size: 16px;
-    height: 36px;
-    padding: 0 0.5rem;
-    transition: all 0.125s ease-in-out;
-    width: calc(100% - 1rem);
+    .placeholder-text {
+      position: absolute;
+      transform: translate(8px, 9px);
+      transition: all 0.125s ease-in-out;
+    }
 
-    &:focus-visible {
-      outline: 0;
+    .led-input-element {
+      background-color: transparent;
+      border: 0;
+      font-size: 16px;
+      height: 36px;
+      padding: 0 0.5rem;
+      position: relative;
+      transition: all 0.125s ease-in-out;
+      width: calc(100% - 1rem);
+
+      &:focus-visible {
+        outline: 0;
+      }
     }
   }
 }

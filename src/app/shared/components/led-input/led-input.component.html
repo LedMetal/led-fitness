@@ -1,14 +1,16 @@
 <div class="led-input-container" [ngClass]="{ 'is-typing': isTyping }">
-  @if (placeholder !== '') {
-  <div class="placeholder-text">
-    {{ placeholder }}
-  </div>
-  }
+  <div class="input-content">
+    @if (placeholder !== '') {
+    <div class="placeholder-text">
+      {{ placeholder }}
+    </div>
+    }
 
-  <input
-    class="led-input-element"
-    [type]="type"
-    [value]="value"
-    (input)="onInput($event)"
-  />
+    <input
+      class="led-input-element"
+      [type]="type"
+      [value]="value"
+      (input)="onInput($event)"
+    />
+  </div>
 </div>
