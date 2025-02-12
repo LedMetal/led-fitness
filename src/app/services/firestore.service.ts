@@ -35,15 +35,6 @@ export class FirestoreService {
     return combineLatest([
       docData(userRef, { idField: 'id' }),
       collectionData(workoutsRef, { idField: 'id' }),
-    ]).pipe(
-      map(([user, workouts]) => {
-        return [
-          { ...user, birthday: (user?.birthday as Timestamp).toDate() },
-          workouts.map((workout: IWorkoutData) => {
-            return { ...workout, date: (workout.date as Timestamp).toDate() };
-          }),
-        ];
-      })
-    ) as Observable<[IUserData, IWorkoutData[]]>;
+    ]) as Observable<[IUserData, IWorkoutData[]]>;
   }
 }
