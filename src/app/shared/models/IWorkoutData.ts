@@ -13,7 +13,7 @@ import { ICardioWorkout } from './ICardioWorkout';
 import { IWeightliftingWorkout } from './IWeightliftingWorkout';
 
 export interface IWorkoutData {
-  id: string;
+  id?: string;
   date: Timestamp | Date;
   type: WorkoutType;
   exercise:
