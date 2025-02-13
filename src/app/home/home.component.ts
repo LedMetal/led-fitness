@@ -14,9 +14,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.firestoreService
-      .GetUserAndWorkoutsData()
+      .getUserAndWorkoutsData()
       .subscribe((data: [IUserData, IWorkoutData[]]) =>
-        console.log('data:', data)
+        console.log('getUserAndWorkoutsData data:', data)
       );
   }
 }
