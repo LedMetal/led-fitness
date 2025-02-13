@@ -51,7 +51,7 @@ export class FirestoreService {
    * @param userData IUserData object to store as user document
    * @returns Observable<void>
    */
-  addUserDocument(userData: IUserData): Observable<void> {
+  addUser(userData: IUserData): Observable<void> {
     const user = this.authService.currentUser();
     const userRef = doc(this.firestore, `users/${user!.uid}`);
 
@@ -60,6 +60,20 @@ export class FirestoreService {
         setDoc(userRef, userData);
       }
     });
+
+    return from(promise);
+  }
+
+  /**
+   * Update the data for a user document
+   *
+   * @param workoutData IUserData object to set
+   * @returns Observable<void>
+   */
+  updateUser(userData: IUserData): Observable<void> {
+    const user = this.authService.currentUser();
+    const userRef = doc(this.firestore, `users/${user!.uid}`);
+    const promise = setDoc(userRef, userData);
 
     return from(promise);
   }
