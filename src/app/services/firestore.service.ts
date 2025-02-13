@@ -82,6 +82,23 @@ export class FirestoreService {
   }
 
   /**
+   * Update the data for a workout document
+   *
+   * @param workoutData IWorkoutData object to set
+   * @returns Observable<void>
+   */
+  updateWorkout(workoutData: IWorkoutData): Observable<void> {
+    const user = this.authService.currentUser();
+    const workoutRef = doc(
+      this.firestore,
+      `users/${user!.uid}/workouts/${workoutData.id}`
+    );
+    const promise = setDoc(workoutRef, workoutData);
+
+    return from(promise);
+  }
+
+  /**
    * Deletes a workout document belonging to user
    *
    * @param workoutId index of workout to delete
