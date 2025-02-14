@@ -1,7 +1,9 @@
+@import "./styles/global_colors.scss";
+
 .top-bar {
   align-items: center;
-  background-color: #222222;
-  color: #f5f5f5;
+  background-color: $topbar_background;
+  color: $topbar_text;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 1rem;
@@ -13,12 +15,16 @@
     gap: 0.5rem;
 
     .home-icon {
-      color: #33b7e4;
+      color: $highlight;
       font-size: 2rem;
     }
 
     .home-text {
       font-size: 1.25rem;
     }
+  }
+
+  .logout-container {
+    cursor: pointer;
   }
 }
