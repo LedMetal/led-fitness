@@ -1,0 +1,21 @@
+@import "../styles/global_colors.scss";
+
+.home-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 53px);
+  justify-content: space-between;
+
+  .navbar-section {
+    width: 100%;
+  }
+
+  .no-workouts-container {
+    align-items: center;
+    color: $home_text;
+    display: flex;
+    flex-grow: 1;
+    font-size: 1.5rem;
+  }
+}
