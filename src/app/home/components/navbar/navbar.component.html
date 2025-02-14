@@ -1,0 +1,17 @@
+<div class="navbar-container">
+  <div class="previous-container" (click)="incrementDay(-1)">
+    <fa-icon [icon]="faAngleLeft"></fa-icon>
+  </div>
+
+  <div class="current-date-container">
+    {{ isToday ? "TODAY" : currentDate.toDateString() }}
+  </div>
+
+  <div
+    class="next-container"
+    [ngClass]="{ disabled: isToday }"
+    (click)="!isToday && incrementDay(1)"
+  >
+    <fa-icon [icon]="faAngleRight"></fa-icon>
+  </div>
+</div>

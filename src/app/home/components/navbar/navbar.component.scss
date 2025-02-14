@@ -1,0 +1,30 @@
+@import "../../../styles/global_colors.scss";
+
+.navbar-container {
+  align-items: center;
+  background-color: $navbar_background;
+  border-bottom: 4px solid $highlight;
+  display: flex;
+  height: 33px;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  user-select: none;
+  width: calc(100% - 32px);
+
+  .previous-container,
+  .next-container {
+    color: $highlight;
+    cursor: pointer;
+  }
+
+  .next-container {
+    &.disabled {
+      cursor: not-allowed;
+      filter: grayscale(1);
+    }
+  }
+
+  .current-date-container {
+    color: $navbar_text;
+  }
+}
