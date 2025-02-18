@@ -1,9 +1,9 @@
 <div class="home-container">
+  @if (isMobile) {
   <div class="navbar-section">
     <navbar></navbar>
   </div>
-
-  @if (noWorkoutData) {
+  } @if (noWorkoutData) {
   <div class="no-workouts-container">Workout Log Empty</div>
   }
 </div>
